@@ -1,35 +1,62 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect, useState } from "react";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Header />
+      <ProductList />
     </>
   )
+}
+
+function Header() {
+  return (
+    <h1>E-Commerce Header</h1>
+  )
+}
+
+function ProductList() {
+  const [products, setProducts] = useState(
+    [{ id: 1, name: "Starlink", price: 1000, isActive: true },
+    { id: 2, name: "Starship", price: 2000, isActive: false },
+    { id: 3, name: "Falcon", price: 3000, isActive: true },
+    { id: 4, name: "Heavy Booster", price: 4000, isActive: true }]);
+
+  useEffect(() => {
+    fetch("https://localhost:7244/api/products")
+      .then(response => response.json())
+      .then(data => setProducts(data));
+  }, [])
+
+
+  function addProduct() {
+    setProducts([...products, { id: Date.now(), name: "Product 5", price: 5000, isActive: true }])
+  }
+
+  console.log("render...")
+  return (
+    <div>
+      <h2>Product List</h2>
+      {products.map(p => (
+        <Product key={p.id} product={p} />
+      ))}
+
+      <button onClick={addProduct}>Add a product.</button>
+    </div>
+  );
+}
+
+function Product(props: any) {
+  return (
+    <>
+      {props.product.isActive ? (
+        <div>
+          <h3>{props.product.name}</h3>
+          <p> {props.product.price}</p>
+        </div>
+      ) : <p>Product is not sale</p>}
+    </>
+  );
 }
 
 export default App
