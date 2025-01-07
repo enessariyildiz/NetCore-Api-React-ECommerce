@@ -13,21 +13,12 @@ function App() {
       .then(data => setProducts(data));
   }, [])
 
-
-  function addProduct() {
-    setProducts([...products, {
-      id: Date.now(),
-      name: "Product 4",
-      price: 5000,
-      isActive: true,
-    }])
-  }
   return (
     <>
       <CssBaseline />
       <Header />
       <Container>
-        <ProductList products={products} addProduct={addProduct} />
+        <ProductList products={products} />
       </Container>
     </>
   )
