@@ -4,6 +4,6 @@ export interface IProduct {
     description?: string,
     price: number,
     isActive: boolean,
-    imageUrl?: string,
+    ImageUrl?: string,
     stock?: number
 }

@@ -167,3 +167,4 @@ D:\Dev\Software\Projects\E-Commerce\Backend\E-Commerce\App.API\obj\Debug\net8.0\
 D:\Dev\Software\Projects\E-Commerce\Backend\E-Commerce\App.API\obj\Debug\net8.0\App.API.pdb
 D:\Dev\Software\Projects\E-Commerce\Backend\E-Commerce\App.API\obj\Debug\net8.0\App.API.genruntimeconfig.cache
 D:\Dev\Software\Projects\E-Commerce\Backend\E-Commerce\App.API\obj\Debug\net8.0\ref\App.API.dll
+D:\Dev\Software\Projects\E-Commerce\Backend\E-Commerce\App.API\bin\Debug\net8.0\App.API.staticwebassets.runtime.json
