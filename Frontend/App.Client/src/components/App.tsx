@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { IProduct } from "../model/IProduct";
 import Header from "./Header";
 import ProductList from "./ProductList";
+import { Container, CssBaseline } from "@mui/material";
 
 function App() {
   const [products, setProducts] = useState<IProduct[]>([]);
@@ -23,8 +24,11 @@ function App() {
   }
   return (
     <>
-      <Header products={products} />
-      <ProductList products={products} addProduct={addProduct} />
+      <CssBaseline />
+      <Header />
+      <Container>
+        <ProductList products={products} addProduct={addProduct} />
+      </Container>
     </>
   )
 }
