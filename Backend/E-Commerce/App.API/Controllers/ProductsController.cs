@@ -39,5 +39,18 @@ namespace App.API.Controllers
 
         }
 
+        [HttpGet("get-item")]
+        public IActionResult GetItem()
+        {
+            var item = new
+            {
+                Id = 1,
+                Name = "Sample Item",
+                ImageUrl = "/img/starlink.png" // Buradaki alanın null veya boş dönmediğine emin olun.
+            };
+            return Ok(item);
+        }
+
+
     }
 }

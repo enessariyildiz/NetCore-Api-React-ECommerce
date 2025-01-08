@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "2W5kfttcdAWrYNZp3nLP5xFBVO3sTVwPcHcdmCGSOpg=",
+  "Hash": "97avojDJURe+id66SgrN7Qs+KuzmmTnk9fd4Uu6QnmY=",
   "Source": "App.API",
   "BasePath": "_content/App.API",
   "Mode": "Default",
@@ -17,12 +17,12 @@
   ],
   "Assets": [
     {
-      "Identity": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\wwwroot\\images\\2.png",
+      "Identity": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\wwwroot\\img\\3.png",
       "SourceId": "App.API",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\wwwroot\\",
       "BasePath": "_content/App.API",
-      "RelativePath": "images/2.png",
+      "RelativePath": "img/3.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -33,15 +33,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\2.png"
+      "OriginalItemSpec": "wwwroot\\img\\3.png"
     },
     {
-      "Identity": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\wwwroot\\images\\3.png",
+      "Identity": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\wwwroot\\img\\falcon.png",
       "SourceId": "App.API",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\wwwroot\\",
       "BasePath": "_content/App.API",
-      "RelativePath": "images/3.png",
+      "RelativePath": "img/falcon.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -52,15 +52,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\3.png"
+      "OriginalItemSpec": "wwwroot\\img\\falcon.png"
     },
     {
-      "Identity": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\wwwroot\\images\\4.png",
+      "Identity": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\wwwroot\\img\\mars.png",
       "SourceId": "App.API",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\wwwroot\\",
       "BasePath": "_content/App.API",
-      "RelativePath": "images/4.png",
+      "RelativePath": "img/mars.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -71,15 +71,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\4.png"
+      "OriginalItemSpec": "wwwroot\\img\\mars.png"
     },
     {
-      "Identity": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\wwwroot\\images\\5.png",
+      "Identity": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\wwwroot\\img\\starlink.png",
       "SourceId": "App.API",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\wwwroot\\",
       "BasePath": "_content/App.API",
-      "RelativePath": "images/5.png",
+      "RelativePath": "img/starlink.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -90,15 +90,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\5.png"
+      "OriginalItemSpec": "wwwroot\\img\\starlink.png"
     },
     {
-      "Identity": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\wwwroot\\images\\6.png",
+      "Identity": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\wwwroot\\img\\starship.png",
       "SourceId": "App.API",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\wwwroot\\",
       "BasePath": "_content/App.API",
-      "RelativePath": "images/6.png",
+      "RelativePath": "img/starship.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -109,15 +109,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\6.png"
+      "OriginalItemSpec": "wwwroot\\img\\starship.png"
     },
     {
-      "Identity": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\wwwroot\\images\\starlink.png",
+      "Identity": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\wwwroot\\img\\venüs.png",
       "SourceId": "App.API",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\wwwroot\\",
       "BasePath": "_content/App.API",
-      "RelativePath": "images/starlink.png",
+      "RelativePath": "img/venüs.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -128,7 +128,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\starlink.png"
+      "OriginalItemSpec": "wwwroot\\img\\venüs.png"
     }
   ]
 }

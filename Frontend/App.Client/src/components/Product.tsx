@@ -11,7 +11,7 @@ interface Props {
 export default function Product({ product }: Props) {
     return (
         <Card>
-            <CardMedia sx={{ height: 160, backgroundSize: "contain" }} image={`http://localhost:7244/images/${product.ImageUrl}`} />
+            <CardMedia sx={{ height: 160, backgroundSize: "contain" }} image={`https://localhost:7244/img/${product.ImageUrl}`} />
             <CardContent>
                 <Typography gutterBottom variant="h6" component="h2" color="text-secondary">
                     {product.name}

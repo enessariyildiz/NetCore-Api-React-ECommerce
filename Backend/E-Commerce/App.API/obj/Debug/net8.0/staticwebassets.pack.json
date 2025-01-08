@@ -1,28 +1,28 @@
 {
   "Files": [
     {
-      "Id": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\wwwroot\\images\\2.png",
-      "PackagePath": "staticwebassets\\images\\2.png"
+      "Id": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\wwwroot\\img\\3.png",
+      "PackagePath": "staticwebassets\\img\\3.png"
     },
     {
-      "Id": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\wwwroot\\images\\3.png",
-      "PackagePath": "staticwebassets\\images\\3.png"
+      "Id": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\wwwroot\\img\\falcon.png",
+      "PackagePath": "staticwebassets\\img\\falcon.png"
     },
     {
-      "Id": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\wwwroot\\images\\4.png",
-      "PackagePath": "staticwebassets\\images\\4.png"
+      "Id": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\wwwroot\\img\\mars.png",
+      "PackagePath": "staticwebassets\\img\\mars.png"
     },
     {
-      "Id": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\wwwroot\\images\\5.png",
-      "PackagePath": "staticwebassets\\images\\5.png"
+      "Id": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\wwwroot\\img\\starlink.png",
+      "PackagePath": "staticwebassets\\img\\starlink.png"
     },
     {
-      "Id": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\wwwroot\\images\\6.png",
-      "PackagePath": "staticwebassets\\images\\6.png"
+      "Id": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\wwwroot\\img\\starship.png",
+      "PackagePath": "staticwebassets\\img\\starship.png"
     },
     {
-      "Id": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\wwwroot\\images\\starlink.png",
-      "PackagePath": "staticwebassets\\images\\starlink.png"
+      "Id": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\wwwroot\\img\\venüs.png",
+      "PackagePath": "staticwebassets\\img\\venüs.png"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.App.API.Microsoft.AspNetCore.StaticWebAssets.props",
