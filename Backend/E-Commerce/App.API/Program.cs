@@ -1,4 +1,5 @@
 using App.API.Data;
+using App.API.Middlewares;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -23,6 +24,8 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+app.UseMiddleware<ExceptionHandling>();
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -32,7 +35,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-
+app.UseStaticFiles();
 
 app.UseCors(opt =>
 {
@@ -41,9 +44,6 @@ app.UseCors(opt =>
 
 
 app.UseAuthorization();
-
-
-app.UseStaticFiles();
 
 app.MapControllers();
 
