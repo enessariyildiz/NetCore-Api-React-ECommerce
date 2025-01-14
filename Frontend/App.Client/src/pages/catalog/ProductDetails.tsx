@@ -2,16 +2,16 @@ import { CircularProgress, Divider, Grid2, Table, TableBody, TableCell, TableRow
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { IProduct } from "../../model/IProduct";
+import request from "../../api/request";
 
 export default function ProductDetailsPage() {
 
-    const { id } = useParams();
+    const { id } = useParams<{ id: string }>();
     const [product, setProduct] = useState<IProduct | null>(null);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch(`https://localhost:7244/api/products/${id}`)
-            .then(response => response.json())
+        id && request.Catalog.details(parseInt(id))
             .then(data => setProduct(data))
             .catch(error => console.log(error))
             .finally(() => setLoading(false));
