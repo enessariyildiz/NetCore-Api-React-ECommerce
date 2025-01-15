@@ -1,6 +1,15 @@
-import axios, { AxiosResponse } from "axios";
+import axios, { AxiosError, AxiosResponse } from "axios";
 
 axios.defaults.baseURL = "https://localhost:7244/api/products";
+
+axios.interceptors.response.use(response => {
+    return response;
+}, (error: AxiosError) => {
+    console.log("Intercepter");
+    console.log(error.response);
+    return Promise.reject(error.response);
+}
+);
 
 const queries = {
     get: (url: string) => axios.get(url).then((response: AxiosResponse) => response.data),
