@@ -47,8 +47,7 @@
               "RelativeToolTip": "App.API\\Program.cs",
               "ViewState": "AQIAAAoAAAAAAAAAAAAAABoAAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-13T18:02:16.813Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-13T18:02:16.813Z"
             },
             {
               "$type": "Document",
@@ -60,8 +59,7 @@
               "RelativeToolTip": "App.API\\Controllers\\ErrorController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAswCoAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-12T20:14:58.152Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-12T20:14:58.152Z"
             }
           ]
         }
