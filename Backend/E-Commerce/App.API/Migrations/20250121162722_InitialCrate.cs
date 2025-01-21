@@ -2,10 +2,12 @@
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace App.API.Migrations
 {
     /// <inheritdoc />
-    public partial class addCartTables : Migration
+    public partial class InitialCrate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -24,12 +26,29 @@ namespace App.API.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Products",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false),
+                    ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Stock = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Products", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "CartItem",
                 columns: table => new
                 {
                     CartItemId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    ProrductId = table.Column<int>(type: "int", nullable: false),
                     ProductId = table.Column<int>(type: "int", nullable: false),
                     CartId = table.Column<int>(type: "int", nullable: false),
                     Quantity = table.Column<int>(type: "int", nullable: false)
@@ -51,6 +70,18 @@ namespace App.API.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.InsertData(
+                table: "Products",
+                columns: new[] { "Id", "Description", "ImageUrl", "IsActive", "Name", "Price", "Stock" },
+                values: new object[,]
+                {
+                    { 1, "Starlink description", "starlink.png", true, "Starlink", 35000m, 10 },
+                    { 2, "Starship description", "starship.png", true, "Starship", 45000m, 20 },
+                    { 3, "Falcon description", "falcon.png", true, "Falcon", 55000m, 30 },
+                    { 4, "Mars description", "mars.png", true, "Mars", 65000m, 40 },
+                    { 5, "Venüs description", "venüs.png", true, "Venüs", 75000m, 50 }
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_CartItem_CartId",
                 table: "CartItem",
@@ -70,6 +101,9 @@ namespace App.API.Migrations
 
             migrationBuilder.DropTable(
                 name: "Carts");
+
+            migrationBuilder.DropTable(
+                name: "Products");
         }
     }
 }
