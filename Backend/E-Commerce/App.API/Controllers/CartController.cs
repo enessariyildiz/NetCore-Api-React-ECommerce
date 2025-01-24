@@ -45,6 +45,21 @@ namespace App.API.Controllers
           
         }
 
+        [HttpDelete]
+        public async Task<ActionResult> DeleteItemFromCart(int productId, int quantity)
+        {
+            var cart = await GetOrCreate();
+            cart.RemoveItem(productId, quantity);
+
+            var result = await _context.SaveChangesAsync() > 0;
+
+            if (result) return Ok();
+
+            return BadRequest(new ProblemDetails { Title = "Problem removing item from the cart" });
+
+        }
+
+
         private async Task<Cart> GetOrCreate()
         {
             var cart = await _context.Carts.Include(i => i.CartItems).ThenInclude(i => i.Product).Where(i => i.CustomerId == Request.Cookies["customerId"]).FirstOrDefaultAsync();
