@@ -1,4 +1,5 @@
 ﻿using App.API.Data;
+using App.API.DTOs;
 using App.API.Entity;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -17,10 +18,12 @@ namespace App.API.Controllers
             _context = context;
         }
 
-        public async Task<ActionResult<Cart>> GetCart()
+        public async Task<ActionResult<CartDto>> GetCart()
         {
-            var cart = await GetOrCreate();
-            return cart;
+            return CartToDto(await GetOrCreate());
+
+            //var cart = await GetOrCreate();
+            //return CartToDto(cart);
         }
 
         [HttpPost]
@@ -30,7 +33,7 @@ namespace App.API.Controllers
 
             var product = await _context.Products.FirstOrDefaultAsync(i => i.Id == productId);
 
-            if (product == null) 
+            if (product == null)
                 return NotFound("Th product is not in database");
 
             cart.AddItem(product, quantity);
@@ -38,11 +41,11 @@ namespace App.API.Controllers
             var result = await _context.SaveChangesAsync() > 0;
 
             if (result)
-                return CreatedAtAction(nameof(GetCart), cart);
+                return CreatedAtAction(nameof(GetCart), CartToDto(cart));
 
-            return BadRequest(new ProblemDetails { Title = "The product can not be added to cart"});
+            return BadRequest(new ProblemDetails { Title = "The product can not be added to cart" });
 
-          
+
         }
 
         [HttpDelete]
@@ -59,12 +62,11 @@ namespace App.API.Controllers
 
         }
 
-
         private async Task<Cart> GetOrCreate()
         {
             var cart = await _context.Carts.Include(i => i.CartItems).ThenInclude(i => i.Product).Where(i => i.CustomerId == Request.Cookies["customerId"]).FirstOrDefaultAsync();
 
-            if(cart == null)
+            if (cart == null)
             {
                 var customerId = Guid.NewGuid().ToString();
 
@@ -83,5 +85,26 @@ namespace App.API.Controllers
 
             return cart;
         }
-    }
+
+        private CartDto CartToDto(Cart cart)
+        {
+
+            return new CartDto
+            {
+                CartId = cart.CartId,
+                CustomerId = cart.CustomerId,
+                CartItems = cart.CartItems.Select(item => new CartItemDto
+                {
+                    ProductId = item.ProductId,
+                    Name = item.Product.Name,
+                    Price = item.Product.Price,
+                    Quantity = item.Quantity,
+                    ImageUrl = item.Product.ImageUrl
+                }).ToList()
+
+
+            };
+
+        }
+    } 
 }
