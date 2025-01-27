@@ -4,6 +4,9 @@ import { AddShoppingCart, Search } from "@mui/icons-material";
 import { Link } from "react-router";
 import { useState } from "react";
 import request from "./request";
+import LoadingButton from '@mui/lab/LoadingButton';
+
+
 
 
 interface Props {
@@ -37,9 +40,13 @@ export default function Product({ product }: Props) {
                 </Typography>
             </CardContent>
             <CardActions>
-                <Button
-                    variant="outlined" size="small" startIcon={<AddShoppingCart />} color="secondary"
-                    onClick={() => handleAddItem(product.id)}> Add to card</Button>
+                <LoadingButton
+                    variant="outlined"
+                    loadingPosition="start"
+                    size="small"
+                    startIcon={<AddShoppingCart />}
+                    loading={loading}
+                    onClick={() => handleAddItem(product.id)}>Add to shop</LoadingButton>
 
                 <Button component={Link} to={`/catalog/${product.id}`} variant="outlined" size="small" startIcon={<Search />} color="info"> View</Button>
             </CardActions>
