@@ -1,21 +1,9 @@
-import { useEffect, useState } from "react";
-import request from "../catalog/request";
 import { CircularProgress, IconButton, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
-import { Cart } from "../../model/ICart";
 import { Delete, Height } from "@mui/icons-material";
+import { useCartContext } from "../../context/CartContext";
 
 export default function ShoppingCartPage() {
-    const [cart, setCart] = useState<Cart | null>(null);
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        request.Cart.get()
-            .then((cart: Cart) => setCart(cart))
-            .catch((error: any) => console.error(error))
-            .finally(() => setLoading(false));
-    }, []);
-
-    if (loading) return <CircularProgress />;
+    const { cart } = useCartContext;
 
     if (!cart) return <h1>Shopping cart is empty!</h1>;
 

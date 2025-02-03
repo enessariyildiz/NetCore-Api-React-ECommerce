@@ -1,5 +1,6 @@
-import { createContext, PropsWithChildren, useState } from "react";
+import { createContext, PropsWithChildren, useContext, useState } from "react";
 import { Cart } from "../model/ICart";
+
 
 interface CartContextValue {
     cart: Cart | null;
@@ -8,6 +9,16 @@ interface CartContextValue {
 }
 
 export const CartContext = createContext<CartContextValue | undefined>(undefined)
+
+export function useCartContext() {
+    const context = useContext(CartContext);
+
+    if (context === undefined) {
+        throw new Error("No provider");
+    }
+
+    return context;
+}
 
 export function CartContextProvider({ children }: PropsWithChildren<any>) {
     const [cart, setCart] = useState<Cart | null>(null);
