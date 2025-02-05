@@ -9,7 +9,6 @@ import { useCartContext } from "../../context/CartContext";
 
 
 
-
 interface Props {
     product: IProduct
 }
@@ -26,6 +25,7 @@ export default function Product({ product }: Props) {
             .then((cart: any) => setCart(cart))
             .catch((error: any) => console.log(error))
             .finally(() => setLoading(false));
+
 
     }
 
