@@ -1,11 +1,36 @@
-import { CircularProgress, IconButton, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
-import { Delete, Height } from "@mui/icons-material";
+import { Alert, CircularProgress, IconButton, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
+import { AddCircleOutline, Delete, Height, RemoveCircleOutline } from "@mui/icons-material";
 import { useCartContext } from "../../context/CartContext";
+import { useState } from "react";
+import { LoadingButton } from "@mui/lab";
+import request from "../catalog/request";
 
 export default function ShoppingCartPage() {
-    const { cart } = useCartContext;
+    const { cart, setCart } = useCartContext;
+    const [loading, setLoading] = useState(false);
 
-    if (!cart) return <h1>Shopping cart is empty!</h1>;
+
+    function handleAddItem(productId: number) {
+        setLoading(true);
+
+        request.Cart.addItem(productId)
+            .then(cart => setCart(cart))
+            .catch(error => console.log(error))
+            .finally(() => setLoading(false));
+    }
+
+    function handleDeleteItem(productId: number, quantity = 1) {
+        setLoading(true);
+
+        request.Cart.deleteItem(productId)
+            .then(cart => setCart(cart))
+            .catch(error => console.log(error))
+            .finally(() => setLoading(false));
+
+    }
+
+    if (cart?.cartItems.lenght === 0) return <Alert severity="warning">Shopping cart is empty!</Alert>;
+
 
     return (
         <TableContainer component={Paper}>
@@ -28,10 +53,20 @@ export default function ShoppingCartPage() {
                                 {item.name}
                             </TableCell>
                             <TableCell align="right">${item.price.toFixed(2)}</TableCell>
-                            <TableCell align="right">{item.quantity}</TableCell>
+                            <TableCell align="right">
+                                <LoadingButton loading={loading} onClick={() => handleAddItem(item.productId)}>
+                                    <AddCircleOutline />
+                                </LoadingButton>
+                                {item.quantity}
+                                <LoadingButton loading={loading} onClick={() => handleDeleteItem(item.productId)}>
+                                    <RemoveCircleOutline />
+                                </LoadingButton>
+                            </TableCell>
                             <TableCell align="right">${(item.price * item.quantity).toFixed(2)}</TableCell>
                             <TableCell align="right">
-                                <IconButton color="error"><Delete /></IconButton>
+                                <IconButton color="error" loading={loading} onClick={() => handleDeleteItem(item.productId, item.quantity)}>
+                                    <Delete />
+                                </IconButton>
                             </TableCell>
                         </TableRow>
                     ))}
