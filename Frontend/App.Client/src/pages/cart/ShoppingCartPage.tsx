@@ -1,12 +1,13 @@
-import { Alert, CircularProgress, IconButton, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
-import { AddCircleOutline, Delete, Height, RemoveCircleOutline } from "@mui/icons-material";
+import { Alert, IconButton, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
+import { AddCircleOutline, Delete, RemoveCircleOutline } from "@mui/icons-material";
 import { useCartContext } from "../../context/CartContext";
 import { useState } from "react";
 import { LoadingButton } from "@mui/lab";
 import request from "../catalog/request";
+import { toast } from "react-toastify";
 
 export default function ShoppingCartPage() {
-    const { cart, setCart } = useCartContext;
+    const { cart, setCart } = useCartContext();
     const [status, setStatus] = useState({ loading: false, id: "" });
 
 
@@ -17,7 +18,6 @@ export default function ShoppingCartPage() {
             .then(cart => setCart(cart))
             .catch(error => console.log(error))
             .finally(() => setStatus({ loading: false, id: "" }));
-
     }
 
     function handleDeleteItem(productId: number, id: string, quantity = 1) {
@@ -67,7 +67,10 @@ export default function ShoppingCartPage() {
                             <TableCell align="right">${(item.price * item.quantity).toFixed(2)}</TableCell>
                             <TableCell align="right">
                                 <IconButton color="error" loading={status.loading && status.id === "del_all" + item.productId}
-                                    onClick={() => handleDeleteItem(item.productId, "del_all" + item.productId, item.quantity)}>
+                                    onClick={() => {
+                                        handleDeleteItem(item.productId, "del_all" + item.productId, item.quantity)
+                                        toast.error("Items removed.")
+                                    }}>
                                     <Delete />
                                 </IconButton>
                             </TableCell>
