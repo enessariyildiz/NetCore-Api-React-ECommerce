@@ -7,6 +7,8 @@ import request from "./request";
 import LoadingButton from '@mui/lab/LoadingButton';
 import { useCartContext } from "../../context/CartContext";
 import { toast } from "react-toastify";
+import { Cart } from "../../model/ICart";
+import { currencyTRY } from "../../utils/formatCurrency";
 
 
 
@@ -23,7 +25,7 @@ export default function Product({ product }: Props) {
         setLoading(true);
 
         request.Cart.addItem(productId)
-            .then(cart => {
+            .then((cart: Cart) => {
                 setCart(cart);
                 toast.success("Added your shopping cart");
             })
@@ -42,7 +44,7 @@ export default function Product({ product }: Props) {
                 </Typography>
 
                 <Typography variant="body2" color="secondary">
-                    {(product.price / 100).toFixed(2)}
+                    {currencyTRY.format(product.price)}
                 </Typography>
             </CardContent>
             <CardActions>

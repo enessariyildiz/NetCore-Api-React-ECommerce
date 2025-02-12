@@ -5,6 +5,8 @@ import { useState } from "react";
 import { LoadingButton } from "@mui/lab";
 import request from "../catalog/request";
 import { toast } from "react-toastify";
+import CartSummary from "./CartSummary";
+import { currencyTRY } from "../../utils/formatCurrency";
 
 export default function ShoppingCartPage() {
     const { cart, setCart } = useCartContext();
@@ -52,7 +54,7 @@ export default function ShoppingCartPage() {
                             <TableCell component="th" scope="row">
                                 {item.name}
                             </TableCell>
-                            <TableCell align="right">${item.price.toFixed(2)}</TableCell>
+                            <TableCell align="right">{currencyTRY.format(item.price)}</TableCell>
                             <TableCell align="right">
                                 <LoadingButton loading={status.loading && status.id === "add" + item.productId}
                                     onClick={() => handleAddItem(item.productId, "add" + item.productId)}>
@@ -64,7 +66,7 @@ export default function ShoppingCartPage() {
                                     <RemoveCircleOutline />
                                 </LoadingButton>
                             </TableCell>
-                            <TableCell align="right">${(item.price * item.quantity).toFixed(2)}</TableCell>
+                            <TableCell align="right">{currencyTRY.format(item.price * item.quantity)}</TableCell>
                             <TableCell align="right">
                                 <IconButton color="error" loading={status.loading && status.id === "del_all" + item.productId}
                                     onClick={() => {
@@ -76,6 +78,7 @@ export default function ShoppingCartPage() {
                             </TableCell>
                         </TableRow>
                     ))}
+                    <CartSummary />
                 </TableBody>
             </Table>
         </TableContainer>
