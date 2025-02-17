@@ -5,10 +5,11 @@ import { Link } from "react-router";
 import { useState } from "react";
 import request from "./request";
 import LoadingButton from '@mui/lab/LoadingButton';
-import { useCartContext } from "../../context/CartContext";
 import { toast } from "react-toastify";
 import { Cart } from "../../model/ICart";
 import { currencyTRY } from "../../utils/formatCurrency";
+import { useAppDispatch } from "../../hooks/hooks";
+import { setCart } from "../cart/cartSlice";
 
 
 
@@ -19,14 +20,14 @@ interface Props {
 export default function Product({ product }: Props) {
 
     const [loading, setLoading] = useState(false)
-    const { setCart } = useCartContext();
+    const dispatch = useAppDispatch();
 
     function handleAddItem(productId: number) {
         setLoading(true);
 
         request.Cart.addItem(productId)
             .then((cart: Cart) => {
-                setCart(cart);
+                dispatch(setCart(cart));
                 toast.success("Added your shopping cart");
             })
             .catch((error: any) => console.log(error))
