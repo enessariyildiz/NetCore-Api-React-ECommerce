@@ -2,12 +2,12 @@ import { Alert, IconButton, Paper, Table, TableBody, TableCell, TableContainer, 
 import { AddCircleOutline, Delete, RemoveCircleOutline } from "@mui/icons-material";
 import { useState } from "react";
 import { LoadingButton } from "@mui/lab";
-import request from "../catalog/request";
 import { toast } from "react-toastify";
 import CartSummary from "./CartSummary";
 import { currencyTRY } from "../../utils/formatCurrency";
 import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
 import { setCart } from "./cartSlice";
+import request from "../../api/request";
 
 export default function ShoppingCartPage() {
     const { cart } = useAppSelector(state => state.cart);
@@ -33,7 +33,7 @@ export default function ShoppingCartPage() {
             .finally(() => setStatus({ loading: false, id: "" }));
     }
 
-    if (cart?.cartItems.lenght === 0) return <Alert severity="warning">Shopping cart is empty!</Alert>;
+    if (cart?.cartItems.length === 0) return <Alert severity="warning">Shopping cart is empty!</Alert>;
 
 
     return (

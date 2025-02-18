@@ -3,13 +3,13 @@ import { IProduct } from "../../model/IProduct";
 import { AddShoppingCart, Search } from "@mui/icons-material";
 import { Link } from "react-router";
 import { useState } from "react";
-import request from "./request";
 import LoadingButton from '@mui/lab/LoadingButton';
 import { toast } from "react-toastify";
 import { Cart } from "../../model/ICart";
 import { currencyTRY } from "../../utils/formatCurrency";
 import { useAppDispatch } from "../../hooks/hooks";
 import { setCart } from "../cart/cartSlice";
+import request from "../../api/request";
 
 
 
@@ -32,8 +32,6 @@ export default function Product({ product }: Props) {
             })
             .catch((error: any) => console.log(error))
             .finally(() => setLoading(false));
-
-
     }
 
     return (
