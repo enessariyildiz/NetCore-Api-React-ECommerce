@@ -6,20 +6,19 @@ import request from "../../api/request";
 import NotFound from "../../errors/NotFound";
 import { LoadingButton } from "@mui/lab";
 import { AddShoppingCart } from "@mui/icons-material";
-import { toast } from "react-toastify";
 import { currencyTRY } from "../../utils/formatCurrency";
 import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
-import { setCart } from "../cart/cartSlice";
+import { addItemToCart } from "../cart/cartSlice";
 
 export default function ProductDetailsPage() {
 
-    const { cart } = useAppSelector(state => state.cart);
+    const { cart, status } = useAppSelector(state => state.cart);
     const dispatch = useAppDispatch();
 
     const { id } = useParams<{ id: string }>();
     const [product, setProduct] = useState<IProduct | null>(null);
     const [loading, setLoading] = useState(true);
-    const [isAdded, setIsAdded] = useState(false);
+
     const item = cart?.cartItems.find(x => x.productId == product?.id);
 
     useEffect(() => {
@@ -29,18 +28,7 @@ export default function ProductDetailsPage() {
             .finally(() => setLoading(false));
     }, [id]);
 
-    function handleAddItem(id: number) {
-        setIsAdded(true)
 
-        request.Cart.addItem(id)
-            .then(cart => {
-                dispatch(setCart(cart));
-                toast.success("Added your shopping cart");
-            })
-            .catch(error => console.log(error))
-            .finally(() => setIsAdded(false))
-
-    }
 
     if (loading) return <CircularProgress />
 
@@ -76,8 +64,8 @@ export default function ProductDetailsPage() {
                     <LoadingButton variant="outlined"
                         loadingPosition="start"
                         startIcon={<AddShoppingCart />}
-                        loading={isAdded}
-                        onClick={() => handleAddItem(product.id)}>
+                        loading={status === "pendingAddItem" + product.id}
+                        onClick={() => dispatch(addItemToCart({ productId: product.id }))}>
                         Add to cart
                     </LoadingButton>
                     {

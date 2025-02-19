@@ -2,16 +2,10 @@ import { Button, Card, CardActions, CardContent, CardMedia, Typography } from "@
 import { IProduct } from "../../model/IProduct";
 import { AddShoppingCart, Search } from "@mui/icons-material";
 import { Link } from "react-router";
-import { useState } from "react";
 import LoadingButton from '@mui/lab/LoadingButton';
-import { toast } from "react-toastify";
-import { Cart } from "../../model/ICart";
 import { currencyTRY } from "../../utils/formatCurrency";
-import { useAppDispatch } from "../../hooks/hooks";
-import { setCart } from "../cart/cartSlice";
-import request from "../../api/request";
-
-
+import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
+import { addItemToCart } from "../cart/cartSlice";
 
 interface Props {
     product: IProduct
@@ -19,20 +13,8 @@ interface Props {
 
 export default function Product({ product }: Props) {
 
-    const [loading, setLoading] = useState(false)
     const dispatch = useAppDispatch();
-
-    function handleAddItem(productId: number) {
-        setLoading(true);
-
-        request.Cart.addItem(productId)
-            .then((cart: Cart) => {
-                dispatch(setCart(cart));
-                toast.success("Added your shopping cart");
-            })
-            .catch((error: any) => console.log(error))
-            .finally(() => setLoading(false));
-    }
+    const { status } = useAppSelector(state => state.cart);
 
     return (
         <Card>
@@ -52,8 +34,8 @@ export default function Product({ product }: Props) {
                     loadingPosition="start"
                     size="small"
                     startIcon={<AddShoppingCart />}
-                    loading={loading}
-                    onClick={() => handleAddItem(product.id)}>Add to shop</LoadingButton>
+                    loading={status === "pendingAddItem" + product.id}
+                    onClick={() => dispatch(addItemToCart({ productId: product.id }))}>Add to shop</LoadingButton>
 
                 <Button component={Link} to={`/catalog/${product.id}`} variant="outlined" size="small" startIcon={<Search />} color="info"> View</Button>
             </CardActions>
