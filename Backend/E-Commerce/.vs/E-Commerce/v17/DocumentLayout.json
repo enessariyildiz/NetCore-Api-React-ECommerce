@@ -1,12 +1,105 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\Migrations\\20250224195756_IdentityDatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:App.API\\Migrations\\20250224195756_IdentityDatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E2D066B0-A17C-4C62-9DA1-E7F55BB114B4}|App.API\\App.API.csproj|d:\\dev\\software\\projects\\e-commerce\\backend\\e-commerce\\app.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2D066B0-A17C-4C62-9DA1-E7F55BB114B4}|App.API\\App.API.csproj|solutionrelative:app.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E2D066B0-A17C-4C62-9DA1-E7F55BB114B4}|App.API\\App.API.csproj|d:\\dev\\software\\projects\\e-commerce\\backend\\e-commerce\\app.api\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2D066B0-A17C-4C62-9DA1-E7F55BB114B4}|App.API\\App.API.csproj|solutionrelative:app.api\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E2D066B0-A17C-4C62-9DA1-E7F55BB114B4}|App.API\\App.API.csproj|d:\\dev\\software\\projects\\e-commerce\\backend\\e-commerce\\app.api\\entity\\approle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2D066B0-A17C-4C62-9DA1-E7F55BB114B4}|App.API\\App.API.csproj|solutionrelative:app.api\\entity\\approle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E2D066B0-A17C-4C62-9DA1-E7F55BB114B4}|App.API\\App.API.csproj|d:\\dev\\software\\projects\\e-commerce\\backend\\e-commerce\\app.api\\entity\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2D066B0-A17C-4C62-9DA1-E7F55BB114B4}|App.API\\App.API.csproj|solutionrelative:app.api\\entity\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "20250224195756_IdentityDatabase.cs",
+              "DocumentMoniker": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\Migrations\\20250224195756_IdentityDatabase.cs",
+              "RelativeDocumentMoniker": "App.API\\Migrations\\20250224195756_IdentityDatabase.cs",
+              "ToolTip": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\Migrations\\20250224195756_IdentityDatabase.cs",
+              "RelativeToolTip": "App.API\\Migrations\\20250224195756_IdentityDatabase.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAAQwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-24T19:57:56.45Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\Program.cs",
+              "RelativeDocumentMoniker": "App.API\\Program.cs",
+              "ToolTip": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\Program.cs",
+              "RelativeToolTip": "App.API\\Program.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAuwBsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-24T19:55:26.979Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AppRole.cs",
+              "DocumentMoniker": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\Entity\\AppRole.cs",
+              "RelativeDocumentMoniker": "App.API\\Entity\\AppRole.cs",
+              "ToolTip": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\Entity\\AppRole.cs",
+              "RelativeToolTip": "App.API\\Entity\\AppRole.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-24T19:54:14.402Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AppUser.cs",
+              "DocumentMoniker": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\Entity\\AppUser.cs",
+              "RelativeDocumentMoniker": "App.API\\Entity\\AppUser.cs",
+              "ToolTip": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\Entity\\AppUser.cs",
+              "RelativeToolTip": "App.API\\Entity\\AppUser.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-24T19:52:54.512Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "App.API\\Data\\AppDbContext.cs",
+              "ToolTip": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "App.API\\Data\\AppDbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-24T19:50:37.811Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
