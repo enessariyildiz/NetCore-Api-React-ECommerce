@@ -49,4 +49,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+SeedData.Initialize(app);
+
 app.Run();
