@@ -7,16 +7,8 @@
       "RelativeMoniker": "D:0:0:{E2D066B0-A17C-4C62-9DA1-E7F55BB114B4}|App.API\\App.API.csproj|solutionrelative:app.api\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E2D066B0-A17C-4C62-9DA1-E7F55BB114B4}|App.API\\App.API.csproj|d:\\dev\\software\\projects\\e-commerce\\backend\\e-commerce\\app.api\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E2D066B0-A17C-4C62-9DA1-E7F55BB114B4}|App.API\\App.API.csproj|solutionrelative:app.api\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E2D066B0-A17C-4C62-9DA1-E7F55BB114B4}|App.API\\App.API.csproj|d:\\dev\\software\\projects\\e-commerce\\backend\\e-commerce\\app.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E2D066B0-A17C-4C62-9DA1-E7F55BB114B4}|App.API\\App.API.csproj|solutionrelative:app.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E2D066B0-A17C-4C62-9DA1-E7F55BB114B4}|App.API\\App.API.csproj|d:\\dev\\software\\projects\\e-commerce\\backend\\e-commerce\\app.api\\data\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E2D066B0-A17C-4C62-9DA1-E7F55BB114B4}|App.API\\App.API.csproj|solutionrelative:app.api\\data\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E2D066B0-A17C-4C62-9DA1-E7F55BB114B4}|App.API\\App.API.csproj|d:\\dev\\software\\projects\\e-commerce\\backend\\e-commerce\\app.api\\dtos\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2D066B0-A17C-4C62-9DA1-E7F55BB114B4}|App.API\\App.API.csproj|solutionrelative:app.api\\dtos\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,14 +23,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "LoginDto.cs",
-              "DocumentMoniker": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\DTOs\\LoginDto.cs",
-              "RelativeDocumentMoniker": "App.API\\DTOs\\LoginDto.cs",
-              "ToolTip": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\DTOs\\LoginDto.cs",
-              "RelativeToolTip": "App.API\\DTOs\\LoginDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAVAAAA",
+              "Title": "RegisterDto.cs",
+              "DocumentMoniker": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\DTOs\\RegisterDto.cs",
+              "RelativeDocumentMoniker": "App.API\\DTOs\\RegisterDto.cs",
+              "ToolTip": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\DTOs\\RegisterDto.cs",
+              "RelativeToolTip": "App.API\\DTOs\\RegisterDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-26T19:47:11.25Z",
+              "WhenOpened": "2025-02-27T19:29:14.477Z",
               "EditorCaption": ""
             },
             {
@@ -49,35 +41,10 @@
               "RelativeDocumentMoniker": "App.API\\Controllers\\AccountController.cs",
               "ToolTip": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\Controllers\\AccountController.cs",
               "RelativeToolTip": "App.API\\Controllers\\AccountController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAASAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAADUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-26T19:45:33.67Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\Program.cs",
-              "RelativeDocumentMoniker": "App.API\\Program.cs",
-              "ToolTip": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\Program.cs",
-              "RelativeToolTip": "App.API\\Program.cs",
-              "ViewState": "AQIAABYAAAAAAAAAAAAAADMAAAAZAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-25T17:50:51.856Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SeedData.cs",
-              "DocumentMoniker": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\Data\\SeedData.cs",
-              "RelativeDocumentMoniker": "App.API\\Data\\SeedData.cs",
-              "ToolTip": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\Data\\SeedData.cs",
-              "RelativeToolTip": "App.API\\Data\\SeedData.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAxwBwAAAA+AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-25T17:50:02.026Z"
             }
           ]
         }
