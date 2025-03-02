@@ -2,8 +2,11 @@ using App.API.Data;
 using App.API.Entity;
 using App.API.Middlewares;
 using App.API.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,7 +22,26 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 });
 
 builder.Services.AddCors();
-builder.Services.AddIdentity<AppUser,AppRole>().AddEntityFrameworkStores<AppDbContext>();
+builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<AppDbContext>();
+builder.Services.AddAuthentication(x =>
+{
+    x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+
+}).AddJwtBearer(x =>
+   {
+       x.RequireHttpsMetadata = false;
+       x.TokenValidationParameters = new TokenValidationParameters
+       {
+           ValidateIssuer = false,
+           ValidIssuer = "enesdev.com",
+           ValidateAudience = false,
+           ValidAudience = "abc",
+           ValidateIssuerSigningKey = true,
+           IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(builder.Configuration["JWTSecurity:SecretKEy"]!)),
+           ValidateLifetime = true
+       };
+   });
 
 builder.Services.Configure<IdentityOptions>(options =>
 {
@@ -59,7 +81,7 @@ app.UseCors(opt =>
     opt.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:1453");
 });
 
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

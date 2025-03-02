@@ -1,105 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{E2D066B0-A17C-4C62-9DA1-E7F55BB114B4}|App.API\\App.API.csproj|d:\\dev\\software\\projects\\e-commerce\\backend\\e-commerce\\app.api\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E2D066B0-A17C-4C62-9DA1-E7F55BB114B4}|App.API\\App.API.csproj|solutionrelative:app.api\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E2D066B0-A17C-4C62-9DA1-E7F55BB114B4}|App.API\\App.API.csproj|d:\\dev\\software\\projects\\e-commerce\\backend\\e-commerce\\app.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E2D066B0-A17C-4C62-9DA1-E7F55BB114B4}|App.API\\App.API.csproj|solutionrelative:app.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E2D066B0-A17C-4C62-9DA1-E7F55BB114B4}|App.API\\App.API.csproj|d:\\dev\\software\\projects\\e-commerce\\backend\\e-commerce\\app.api\\services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E2D066B0-A17C-4C62-9DA1-E7F55BB114B4}|App.API\\App.API.csproj|solutionrelative:app.api\\services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E2D066B0-A17C-4C62-9DA1-E7F55BB114B4}|App.API\\App.API.csproj|d:\\dev\\software\\projects\\e-commerce\\backend\\e-commerce\\app.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{E2D066B0-A17C-4C62-9DA1-E7F55BB114B4}|App.API\\App.API.csproj|solutionrelative:app.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E2D066B0-A17C-4C62-9DA1-E7F55BB114B4}|App.API\\App.API.csproj|d:\\dev\\software\\projects\\e-commerce\\backend\\e-commerce\\app.api\\dtos\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E2D066B0-A17C-4C62-9DA1-E7F55BB114B4}|App.API\\App.API.csproj|solutionrelative:app.api\\dtos\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 4,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\appsettings.json",
-              "RelativeDocumentMoniker": "App.API\\appsettings.json",
-              "ToolTip": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\appsettings.json",
-              "RelativeToolTip": "App.API\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAABSAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-03-01T20:22:00.927Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "TokenService.cs",
-              "DocumentMoniker": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\Services\\TokenService.cs",
-              "RelativeDocumentMoniker": "App.API\\Services\\TokenService.cs",
-              "ToolTip": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\Services\\TokenService.cs",
-              "RelativeToolTip": "App.API\\Services\\TokenService.cs",
-              "ViewState": "AQIAAB4AAAAAAAAAAAAYwDAAAAAuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-01T20:07:13.689Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\Program.cs",
-              "RelativeDocumentMoniker": "App.API\\Program.cs",
-              "ToolTip": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\Program.cs",
-              "RelativeToolTip": "App.API\\Program.cs",
-              "ViewState": "AQIAABYAAAAAAAAAAAAAACcAAAArAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-28T19:02:06.54Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "RegisterDto.cs",
-              "DocumentMoniker": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\DTOs\\RegisterDto.cs",
-              "RelativeDocumentMoniker": "App.API\\DTOs\\RegisterDto.cs",
-              "ToolTip": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\DTOs\\RegisterDto.cs",
-              "RelativeToolTip": "App.API\\DTOs\\RegisterDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAaAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-27T19:29:14.477Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "App.API\\Controllers\\AccountController.cs",
-              "ToolTip": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "App.API\\Controllers\\AccountController.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAAwCMAAAAuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-26T19:45:33.67Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }

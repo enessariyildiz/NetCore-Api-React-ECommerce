@@ -1,6 +1,7 @@
 ﻿using App.API.Data;
 using App.API.DTOs;
 using App.API.Entity;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -18,6 +19,8 @@ namespace App.API.Controllers
             _context = context;
         }
 
+        [HttpGet]
+        [Authorize]
         public async Task<ActionResult<CartDto>> GetCart()
         {
             return CartToDto(await GetOrCreate());
