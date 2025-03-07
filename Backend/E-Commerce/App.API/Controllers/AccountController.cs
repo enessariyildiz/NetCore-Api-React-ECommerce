@@ -20,7 +20,7 @@ namespace App.API.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<IActionResult> Login(LoginDto model)
+        public async Task<ActionResult<UserDto>> Login(LoginDto model)
         {
             var user = await _userManager.FindByNameAsync(model.UserName);
 
@@ -33,7 +33,9 @@ namespace App.API.Controllers
 
             if (result)
             {
-                return Ok(new { token = await _tokenService.GenerateToken(user) });
+                return Ok(new UserDto {
+                    Name = user.Name!,
+                    Token = await _tokenService.GenerateToken(user) }); ;
             }
 
             return Unauthorized();
