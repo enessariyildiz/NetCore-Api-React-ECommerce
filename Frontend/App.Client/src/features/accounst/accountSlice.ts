@@ -1,6 +1,6 @@
-import { FieldValue } from "react-hook-form";
+import { FieldValues } from "react-hook-form";
 import { User } from "../../model/IUser";
-import { createAsyncThunk } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import request from "../../api/request";
 
 interface AccountSlice {
@@ -11,7 +11,7 @@ const initialState: AccountSlice = {
     user: null
 }
 
-export const loginUser = createAsyncThunk<User, FieldValue>(
+export const loginUser = createAsyncThunk<User, FieldValues>(
     "accountt/login",
     async (data, { rejectWithValue }) => {
         try {
@@ -23,3 +23,14 @@ export const loginUser = createAsyncThunk<User, FieldValue>(
         }
     }
 )
+
+export const accountSlice = createSlice({
+    name: "account",
+    initialState,
+    reducers: {},
+    extraReducers: (builder => {
+        builder.addCase(loginUser.fulfilled, (state, action) => {
+            state.user = action.payload;
+        })
+    })
+})
