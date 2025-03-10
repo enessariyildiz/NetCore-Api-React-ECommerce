@@ -32,7 +32,7 @@
               "RelativeDocumentMoniker": "App.API\\Controllers\\AccountController.cs",
               "ToolTip": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\Controllers\\AccountController.cs",
               "RelativeToolTip": "App.API\\Controllers\\AccountController.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAAwCQAAAAlAAAA",
+              "ViewState": "AQIAABcAAAAAAAAAAAAQwFcAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-07T12:22:16.631Z",
               "EditorCaption": ""
@@ -47,8 +47,7 @@
               "RelativeToolTip": "App.API\\DTOs\\UserDto.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-07T12:14:09.315Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-07T12:14:09.315Z"
             },
             {
               "$type": "Document",
@@ -60,8 +59,7 @@
               "RelativeToolTip": "App.API\\Program.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-03T18:51:22.39Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-03T18:51:22.39Z"
             }
           ]
         }
