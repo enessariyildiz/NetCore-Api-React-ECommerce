@@ -1,4 +1,3 @@
-import Header from "./Header";
 import { CircularProgress, Container, CssBaseline } from "@mui/material";
 import { Outlet } from "react-router";
 import { ToastContainer } from "react-toastify";
@@ -7,7 +6,8 @@ import { useEffect, useState } from "react";
 import request from "../api/request";
 import { useAppDispatch } from "../hooks/hooks";
 import { setCart } from "../features/cart/cartSlice";
-import { setUser } from "../features/accounst/accountSlice";
+import { logout, setUser } from "../features/accounst/accountSlice";
+import Header from "./Header";
 
 function App() {
 
@@ -20,9 +20,12 @@ function App() {
     request.Account.getUser()
       .then(user => {
         setUser(user);
-        localStorage.setItem("user", user);
+        localStorage.setItem("user", JSON.stringify(user));
       })
-      .catch(error => console.log(error));
+      .catch(error => {
+        console.log(error);
+        dispatch(logout());
+      });
 
 
     request.Cart.get()
