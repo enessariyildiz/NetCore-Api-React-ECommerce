@@ -5,7 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useEffect, useState } from "react";
 import request from "../api/request";
 import { useAppDispatch } from "../hooks/hooks";
-import { setCart } from "../features/cart/cartSlice";
+import { getCart } from "../features/cart/cartSlice";
 import { logout, setUser } from "../features/accounst/accountSlice";
 import Header from "./Header";
 
@@ -14,7 +14,8 @@ function App() {
   const dispatch = useAppDispatch();
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
+  const initApp = async () => {
+
     dispatch(setUser(JSON.parse(localStorage.getItem("user")!)));
 
     request.Account.getUser()
@@ -28,10 +29,12 @@ function App() {
       });
 
 
-    request.Cart.get()
-      .then(cart => dispatch(setCart(cart)))
-      .catch(error => console.log(error))
-      .finally(() => setLoading(false));
+    await dispatch(getCart());
+
+  }
+
+  useEffect(() => {
+    initApp().then(() => setLoading(false));
   }, []);
 
   if (loading) return <CircularProgress />
