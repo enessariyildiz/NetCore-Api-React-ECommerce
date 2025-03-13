@@ -3,10 +3,9 @@ import { Outlet } from "react-router";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { useEffect, useState } from "react";
-import request from "../api/request";
-import { useAppDispatch } from "../hooks/hooks";
+import { useAppDispatch } from "../store/store";
 import { getCart } from "../features/cart/cartSlice";
-import { logout, setUser } from "../features/accounst/accountSlice";
+import { getUser } from "../features/accounts/accountSlice";
 import Header from "./Header";
 
 function App() {
@@ -15,19 +14,7 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   const initApp = async () => {
-
-    dispatch(setUser(JSON.parse(localStorage.getItem("user")!)));
-
-    request.Account.getUser()
-      .then(user => {
-        setUser(user);
-        localStorage.setItem("user", JSON.stringify(user));
-      })
-      .catch(error => {
-        console.log(error);
-        dispatch(logout());
-      });
-
+    await dispatch(getUser());
 
     await dispatch(getCart());
 

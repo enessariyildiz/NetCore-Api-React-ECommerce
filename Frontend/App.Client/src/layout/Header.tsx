@@ -1,8 +1,8 @@
 import { ShoppingBag } from "@mui/icons-material";
 import { AppBar, Badge, Box, Button, IconButton, Stack, Toolbar, Typography } from "@mui/material";
 import { Link, NavLink } from "react-router";
-import { useAppDispatch, useAppSelector } from "../hooks/hooks";
-import { logout } from "../features/accounst/accountSlice";
+import { logout } from "../features/accounts/accountSlice";
+import { useAppDispatch, useAppSelector } from "../store/store";
 
 
 const links = [

@@ -4,8 +4,8 @@ import { AddShoppingCart, Search } from "@mui/icons-material";
 import { Link } from "react-router";
 import LoadingButton from '@mui/lab/LoadingButton';
 import { currencyTRY } from "../../utils/formatCurrency";
-import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
 import { addItemToCart } from "../cart/cartSlice";
+import { useAppDispatch, useAppSelector } from "../../store/store";
 
 interface Props {
     product: IProduct

@@ -3,15 +3,14 @@ import { AddCircleOutline, Delete, RemoveCircleOutline } from "@mui/icons-materi
 import { LoadingButton } from "@mui/lab";
 import CartSummary from "./CartSummary";
 import { currencyTRY } from "../../utils/formatCurrency";
-import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
 import { addItemToCart, deleteItemFromCart } from "./cartSlice";
+import { useAppDispatch, useAppSelector } from "../../store/store";
 
 export default function ShoppingCartPage() {
     const { cart, status } = useAppSelector(state => state.cart);
     const dispatch = useAppDispatch();
 
     if (cart?.cartItems.length === 0) return <Alert severity="warning">Shopping cart is empty!</Alert>;
-
 
     return (
         <TableContainer component={Paper}>
