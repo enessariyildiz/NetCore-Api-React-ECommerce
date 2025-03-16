@@ -1,9 +1,11 @@
-﻿using App.API.DTOs;
+﻿using App.API.Data;
+using App.API.DTOs;
 using App.API.Entity;
 using App.API.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace App.API.Controllers
 {
@@ -13,11 +15,13 @@ namespace App.API.Controllers
     {
         private readonly UserManager<AppUser> _userManager;
         private readonly TokenService _tokenService;
+        private readonly AppDbContext _context;
 
-        public AccountController(UserManager<AppUser> userManager, TokenService tokenService)
+        public AccountController(UserManager<AppUser> userManager, TokenService tokenService, AppDbContext context)
         {
             _userManager = userManager;
             _tokenService = tokenService;
+            _context = context;
         }
 
         [HttpPost("login")]
@@ -34,12 +38,63 @@ namespace App.API.Controllers
 
             if (result)
             {
+                var userCart =  await GetOrCreate(model.UserName);
+                var cookieCart = await GetOrCreate(Request.Cookies["customerId"]!);
+
+                if (userCart != null)
+                {
+                    foreach (var item in userCart.CartItems)
+                    {
+                        cookieCart.AddItem(item.Product, item.Quantity);
+                    }
+
+                    _context.Carts.Remove(userCart);
+                }
+
+                cookieCart.CustomerId = model.UserName;
+                await _context.SaveChangesAsync();
+
+
                 return Ok(new UserDto {
                     Name = user.Name!,
                     Token = await _tokenService.GenerateToken(user) }); ;
             }
 
             return Unauthorized();
+        }
+
+        private async Task<Cart> GetOrCreate(string custID)
+        {
+            var cart = await _context.Carts.Include(i => i.CartItems)
+                .ThenInclude(i => i.Product)
+                .Where(i => i.CustomerId == custID)
+                .FirstOrDefaultAsync();
+
+            if (cart == null)
+            {
+                var customerId = User.Identity?.Name;
+
+                if (string.IsNullOrEmpty(customerId))
+                {
+                    customerId = Guid.NewGuid().ToString();
+
+                    var cookieOptions = new CookieOptions
+                    {
+                        Expires = DateTime.Now.AddMonths(1),
+                        IsEssential = true,
+                    };
+
+                    Response.Cookies.Append("customerId", customerId, cookieOptions);
+
+                }
+
+                cart = new Cart { CustomerId = customerId };
+
+                _context.Carts.Add(cart);
+                await _context.SaveChangesAsync();
+            }
+
+            return cart;
         }
 
         [HttpPost("register")]

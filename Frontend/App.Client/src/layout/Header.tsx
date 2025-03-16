@@ -3,6 +3,7 @@ import { AppBar, Badge, Box, Button, IconButton, Stack, Toolbar, Typography } fr
 import { Link, NavLink } from "react-router";
 import { logout } from "../features/accounts/accountSlice";
 import { useAppDispatch, useAppSelector } from "../store/store";
+import { clearCart } from "../features/cart/cartSlice";
 
 
 const links = [
@@ -59,7 +60,11 @@ export default function Header() {
                         user ? (
                             <Stack direction="row">
                                 <Button sx={navStyles}>{user.name}</Button>
-                                <Button sx={navStyles} onClick={() => dispatch(logout())}>Logout</Button>
+                                <Button sx={navStyles} onClick={() => {
+                                    dispatch(logout())
+                                    dispatch(clearCart())
+                                }
+                                }>Logout</Button>
                             </Stack>
                         ) : (
 
