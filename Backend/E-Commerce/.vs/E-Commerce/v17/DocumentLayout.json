@@ -1,12 +1,88 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E2D066B0-A17C-4C62-9DA1-E7F55BB114B4}|App.API\\App.API.csproj|d:\\dev\\software\\projects\\e-commerce\\backend\\e-commerce\\app.api\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2D066B0-A17C-4C62-9DA1-E7F55BB114B4}|App.API\\App.API.csproj|solutionrelative:app.api\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E2D066B0-A17C-4C62-9DA1-E7F55BB114B4}|App.API\\App.API.csproj|d:\\dev\\software\\projects\\e-commerce\\backend\\e-commerce\\app.api\\extensions\\orderextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2D066B0-A17C-4C62-9DA1-E7F55BB114B4}|App.API\\App.API.csproj|solutionrelative:app.api\\extensions\\orderextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E2D066B0-A17C-4C62-9DA1-E7F55BB114B4}|App.API\\App.API.csproj|d:\\dev\\software\\projects\\e-commerce\\backend\\e-commerce\\app.api\\dtos\\orderdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2D066B0-A17C-4C62-9DA1-E7F55BB114B4}|App.API\\App.API.csproj|solutionrelative:app.api\\dtos\\orderdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E2D066B0-A17C-4C62-9DA1-E7F55BB114B4}|App.API\\App.API.csproj|d:\\dev\\software\\projects\\e-commerce\\backend\\e-commerce\\app.api\\entity\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2D066B0-A17C-4C62-9DA1-E7F55BB114B4}|App.API\\App.API.csproj|solutionrelative:app.api\\entity\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "OrderExtensions.cs",
+              "DocumentMoniker": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\Extensions\\OrderExtensions.cs",
+              "RelativeDocumentMoniker": "App.API\\Extensions\\OrderExtensions.cs",
+              "ToolTip": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\Extensions\\OrderExtensions.cs",
+              "RelativeToolTip": "App.API\\Extensions\\OrderExtensions.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAABAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-18T20:03:42.263Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Order.cs",
+              "DocumentMoniker": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\Entity\\Order.cs",
+              "RelativeDocumentMoniker": "App.API\\Entity\\Order.cs",
+              "ToolTip": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\Entity\\Order.cs",
+              "RelativeToolTip": "App.API\\Entity\\Order.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAUwBkAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-18T19:54:52.453Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "OrderDto.cs",
+              "DocumentMoniker": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\DTOs\\OrderDto.cs",
+              "RelativeDocumentMoniker": "App.API\\DTOs\\OrderDto.cs",
+              "ToolTip": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\DTOs\\OrderDto.cs",
+              "RelativeToolTip": "App.API\\DTOs\\OrderDto.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAgwBcAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-18T19:54:40.256Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\Controllers\\OrderController.cs",
+              "RelativeDocumentMoniker": "App.API\\Controllers\\OrderController.cs",
+              "ToolTip": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\Controllers\\OrderController.cs",
+              "RelativeToolTip": "App.API\\Controllers\\OrderController.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-18T19:43:37.114Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
