@@ -2,7 +2,7 @@ import { Avatar, Box, Container, Paper, TextField, Typography } from "@mui/mater
 import { FieldValues, useForm } from "react-hook-form";
 import { LoadingButton } from "@mui/lab";
 import { loginUser } from "./accountSlice";
-import { useNavigate } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 import { useAppDispatch } from "../../store/store";
 import { getCart } from "../cart/cartSlice";
 
@@ -10,6 +10,7 @@ export default function LoginPage() {
 
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
+    const location = useLocation();
 
     const { register, handleSubmit, formState: { errors, isSubmitting, isValid } } = useForm({
         defaultValues: {
@@ -21,7 +22,7 @@ export default function LoginPage() {
     async function submitForm(data: FieldValues) {
         await dispatch(loginUser(data));
         await dispatch(getCart());
-        navigate("/catalog");
+        navigate(location.state?.from || "/catalog");
     }
 
 
