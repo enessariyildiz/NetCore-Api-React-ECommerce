@@ -1,10 +1,10 @@
 import { ChevronLeftRounded, ChevronRightRounded, Info } from "@mui/icons-material";
-import { Box, Button, Grid2, Paper, Step, StepLabel, Stepper } from "@mui/material";
+import { Box, Button, Grid2, Paper, Stack, Step, StepLabel, Stepper, Typography } from "@mui/material";
 import AddressForm from "./AddressForm";
 import Review from "./Review";
 import PaymentForm from "./PaymentForm";
 import { useState } from "react";
-import { FieldValue, FieldValues, FormProvider, useForm } from "react-hook-form";
+import { FieldValues, FormProvider, useForm } from "react-hook-form";
 import { Form } from "react-router";
 
 const step = ["Delivery Information", "Payment", "Order Summary"]
@@ -60,7 +60,16 @@ export default function CheckoutPage() {
                         </Box>
                         <Box>
                             {activeStep === step.length ? (
-                                <h2>Order Complated</h2>
+                                <Stack spacing={2}>
+                                    <Typography variant="h3">Thank you. We have received your order.</Typography>
+                                    <Typography variant="body1" sx={{ color: "text.danger" }}>
+                                        Your order number <strong>#1234</strong>. We will send you e-mail when your order is confirmed.</Typography>
+                                    <Button sx={{
+                                        alignSelf: "start",
+                                        width: { xs: "100%", sm: "auto" }
+                                    }}
+                                        variant="contained">List my orders.</Button>
+                                </Stack>
                             ) : (
 
                                 <Form onSubmit={methods.handleSubmit(handleNext)}>
