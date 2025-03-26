@@ -77,8 +77,14 @@ const Account = {
     getUser: () => queries.get("account/getUser")
 }
 
+const Order = {
+    getOrders: () => queries.get("orders"),
+    getOrder: (id: number) => queries.get(`orders/${id}`),
+    createOrder: (formData: any) => queries.post("orders", formData)
+}
+
 const request = {
-    Catalog, Errors, Cart, Account
+    Catalog, Errors, Cart, Account, Order
 
 }
 

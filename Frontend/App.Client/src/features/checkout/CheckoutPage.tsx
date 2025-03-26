@@ -6,6 +6,7 @@ import PaymentForm from "./PaymentForm";
 import { useState } from "react";
 import { FieldValues, FormProvider, useForm } from "react-hook-form";
 import { Form } from "react-router";
+import request from "../../api/request";
 
 const step = ["Delivery Information", "Payment", "Order Summary"]
 
@@ -27,10 +28,15 @@ export default function CheckoutPage() {
 
     const [activeStep, setActiveStep] = useState(0);
     const methods = useForm();
+    const [orderId, setOrderId] = useState(0);
 
-    function handleNext(data: FieldValues) {
-        console.log(data);
-        setActiveStep(activeStep + 1);
+    async function handleNext(data: FieldValues) {
+        if (activeStep == 2) {
+            setOrderId(await request.Order.createOrder(data));
+        }
+        else {
+            setActiveStep(activeStep + 1);
+        }
     }
 
     function handlePrevious() {
@@ -63,7 +69,7 @@ export default function CheckoutPage() {
                                 <Stack spacing={2}>
                                     <Typography variant="h3">Thank you. We have received your order.</Typography>
                                     <Typography variant="body1" sx={{ color: "text.danger" }}>
-                                        Your order number <strong>#1234</strong>. We will send you e-mail when your order is confirmed.</Typography>
+                                        Your order number <strong>#{orderId}</strong>. We will send you e-mail when your order is confirmed.</Typography>
                                     <Button sx={{
                                         alignSelf: "start",
                                         width: { xs: "100%", sm: "auto" }
