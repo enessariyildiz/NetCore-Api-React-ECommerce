@@ -41,7 +41,7 @@ namespace App.API.Controllers
                 .FirstOrDefaultAsync();
         }
 
-        [HttpPost("CreateOrder")]
+        [HttpPost]
         public async Task<ActionResult<Order>> CreateOrder(CreateOrderDto orderDto)
         {
             var cart = await _context.Carts

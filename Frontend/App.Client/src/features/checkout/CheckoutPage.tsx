@@ -7,6 +7,9 @@ import { useState } from "react";
 import { FieldValues, FormProvider, useForm } from "react-hook-form";
 import { Form } from "react-router";
 import request from "../../api/request";
+import { useAppDispatch } from "../../store/store";
+import { clearCart } from "../cart/cartSlice";
+import { LoadingButton } from "@mui/lab";
 
 const step = ["Delivery Information", "Payment", "Order Summary"]
 
@@ -29,10 +32,26 @@ export default function CheckoutPage() {
     const [activeStep, setActiveStep] = useState(0);
     const methods = useForm();
     const [orderId, setOrderId] = useState(0);
+    const [loading, setLoading] = useState(false);
+    const dispatch = useAppDispatch();
 
     async function handleNext(data: FieldValues) {
         if (activeStep == 2) {
-            setOrderId(await request.Order.createOrder(data));
+
+            setLoading(true);
+
+            try {
+                setOrderId(await request.Order.createOrder(data));
+                setActiveStep(activeStep + 1);
+                dispatch(clearCart());
+                setLoading(false);
+
+            } catch (error: any) {
+                console.log(error);
+                setLoading(false);
+            }
+
+
         }
         else {
             setActiveStep(activeStep + 1);
@@ -47,14 +66,17 @@ export default function CheckoutPage() {
         <FormProvider {...methods}>
             <Paper>
                 <Grid2 container spacing={4} >
-                    <Grid2 size={4} sx={{
-                        borderRight: "1px solid",
-                        borderColor: "divider",
-                        p: 3
-                    }}>
-                        <Info />
-                    </Grid2>
-                    <Grid2 size={8} sx={{ p: 3 }}>
+                    {activeStep !== step.length && (
+                        <Grid2 size={4} sx={{
+                            borderRight: "1px solid",
+                            borderColor: "divider",
+                            p: 3
+                        }}>
+                            <Info />
+                        </Grid2>
+                    )}
+
+                    <Grid2 size={activeStep !== step.length ? 8 : 12} sx={{ p: 3 }}>
                         <Box>
                             <Stepper activeStep={activeStep} sx={{ height: 40, mb: 4 }}>
                                 {step.map((label) => (
@@ -97,10 +119,13 @@ export default function CheckoutPage() {
                                                 <Button startIcon={<ChevronRightRounded />} variant="contained" onClick={handlePrevious}>Back</Button>
 
                                             }
-                                            <Button
+                                            <LoadingButton
                                                 type="submit"
+                                                loading={loading}
                                                 startIcon={<ChevronLeftRounded />}
-                                                variant="contained">Next</Button>
+                                                variant="contained">
+                                                {activeStep == 2 ? "Complated order" : "Next"};
+                                            </LoadingButton>
                                         </Box>
                                     </Box>
                                 </Form>
