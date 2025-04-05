@@ -176,3 +176,5 @@ D:\Dev\Software\Projects\E-Commerce\Backend\E-Commerce\App.API\bin\Debug\net8.0\
 D:\Dev\Software\Projects\E-Commerce\Backend\E-Commerce\App.API\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 D:\Dev\Software\Projects\E-Commerce\Backend\E-Commerce\App.API\bin\Debug\net8.0\Microsoft.Bcl.Memory.dll
 D:\Dev\Software\Projects\E-Commerce\Backend\E-Commerce\App.API\bin\Debug\net8.0\Scalar.AspNetCore.dll
+D:\Dev\Software\Projects\E-Commerce\Backend\E-Commerce\App.API\bin\Debug\net8.0\Iyzipay.dll
+D:\Dev\Software\Projects\E-Commerce\Backend\E-Commerce\App.API\bin\Debug\net8.0\Newtonsoft.Json.dll

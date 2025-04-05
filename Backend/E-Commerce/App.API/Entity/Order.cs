@@ -30,6 +30,8 @@
         public string ProductImage { get; set; } = null!; 
         public decimal Price { get; set; }
         public int Quantity { get; set; }
+        public string? ConverationId { get; set; }
+        public string? BasketId { get; set; }
     }
 
     public enum OrderStatus
