@@ -94,7 +94,11 @@ namespace App.API.Controllers
             };
 
             // Payment
-            await ProcessPayment(orderDto, cart);
+            var paymentResult = await ProcessPayment(orderDto, cart);
+
+            order.ConverationId = paymentResult.ConversationId;
+            order.BasketId = paymentResult.BasketId;
+
             _context.Orders.Add(order);
             _context.Carts.Remove(cart);
 
@@ -102,7 +106,7 @@ namespace App.API.Controllers
 
             if (result)
                 return CreatedAtAction(nameof(GetOrder), new { id = order.Id }, order.Id);
-            return BadRequest(new ProblemDetails { Title = "Problem getting order"});
+            return BadRequest(new ProblemDetails { Title = "Problem getting order" });
         }
 
         private async Task<Payment> ProcessPayment(CreateOrderDto model, Cart cart)
@@ -159,32 +163,18 @@ namespace App.API.Controllers
             request.BillingAddress = shippingAddress;
 
             List<BasketItem> basketItems = new List<BasketItem>();
-            BasketItem firstBasketItem = new BasketItem();
-            firstBasketItem.Id = "BI101";
-            firstBasketItem.Name = "Binocular";
-            firstBasketItem.Category1 = "Collectibles";
-            firstBasketItem.Category2 = "Accessories";
-            firstBasketItem.ItemType = BasketItemType.PHYSICAL.ToString();
-            firstBasketItem.Price = "0.3";
-            basketItems.Add(firstBasketItem);
 
-            BasketItem secondBasketItem = new BasketItem();
-            secondBasketItem.Id = "BI102";
-            secondBasketItem.Name = "Game code";
-            secondBasketItem.Category1 = "Game";
-            secondBasketItem.Category2 = "Online Game Items";
-            secondBasketItem.ItemType = BasketItemType.VIRTUAL.ToString();
-            secondBasketItem.Price = "0.5";
-            basketItems.Add(secondBasketItem);
+            foreach (var item in cart.CartItems)
+            {
+                BasketItem basketItem = new BasketItem();
+                basketItem.Id = item.ProductId.ToString();
+                basketItem.Name = item.Product.Name;
+                basketItem.Category1 = "Watch";
+                basketItem.ItemType = BasketItemType.PHYSICAL.ToString();
+                basketItem.Price = ((double) item.Product.Price * item.Quantity).ToString();
+                basketItems.Add(basketItem);
+            }
 
-            BasketItem thirdBasketItem = new BasketItem();
-            thirdBasketItem.Id = "BI103";
-            thirdBasketItem.Name = "Usb";
-            thirdBasketItem.Category1 = "Electronics";
-            thirdBasketItem.Category2 = "Usb / Cable";
-            thirdBasketItem.ItemType = BasketItemType.PHYSICAL.ToString();
-            thirdBasketItem.Price = "0.2";
-            basketItems.Add(thirdBasketItem);
             request.BasketItems = basketItems;
 
             return await Payment.Create(request, options);
