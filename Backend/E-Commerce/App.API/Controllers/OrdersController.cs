@@ -96,6 +96,11 @@ namespace App.API.Controllers
             // Payment
             var paymentResult = await ProcessPayment(orderDto, cart);
 
+            if (paymentResult.Status == "failure")
+            {
+                return BadRequest(new ProblemDetails { Title = paymentResult.ErrorMessage });
+            }
+
             order.ConverationId = paymentResult.ConversationId;
             order.BasketId = paymentResult.BasketId;
 
@@ -123,7 +128,7 @@ namespace App.API.Controllers
             request.PaidPrice = cart.CalculateTotal().ToString();
             request.Currency = Currency.TRY.ToString();
             request.Installment = 1;
-            request.BasketId = Guid.NewGuid().ToString();
+            request.BasketId = cart.CartId.ToString();
             request.PaymentChannel = PaymentChannel.WEB.ToString();
             request.PaymentGroup = PaymentGroup.PRODUCT.ToString();
 

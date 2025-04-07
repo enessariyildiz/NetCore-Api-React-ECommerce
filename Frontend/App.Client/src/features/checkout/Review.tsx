@@ -30,9 +30,8 @@ export default function Review() {
                         sx={{ display: "flex", alignItems: "center", mb: 2 }}>
                         <PaymentsOutlined color="secondary" sx={{ mr: 2 }} /> Payment Information
                     </Typography>
-                    <Typography gutterBottom sx={{ color: "text.secondary" }} >{getValues("card_name")}</Typography>
-                    <Typography gutterBottom sx={{ color: "text.secondary" }} >{getValues("card_number")}</Typography>
-                    <Typography gutterBottom sx={{ color: "text.secondary" }} >{getValues("card_expiry_date")}</Typography>
+                    <Typography gutterBottom sx={{ color: "text.secondary" }} >{getValues("cardname")}</Typography>
+                    <Typography gutterBottom sx={{ color: "text.secondary" }} >{getValues("cardnumber")}</Typography>
                 </div>
             </Stack>
         </Stack>

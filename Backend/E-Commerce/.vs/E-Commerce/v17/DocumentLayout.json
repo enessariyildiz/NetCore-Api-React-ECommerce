@@ -47,8 +47,7 @@
               "RelativeToolTip": "App.API\\Entity\\Order.cs",
               "ViewState": "AQIAABwAAAAAAAAAAAAQwBEAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-05T19:14:29.781Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-05T19:14:29.781Z"
             },
             {
               "$type": "Document",
@@ -58,7 +57,7 @@
               "RelativeDocumentMoniker": "App.API\\Controllers\\OrdersController.cs",
               "ToolTip": "D:\\Dev\\Software\\Projects\\E-Commerce\\Backend\\E-Commerce\\App.API\\Controllers\\OrdersController.cs",
               "RelativeToolTip": "App.API\\Controllers\\OrdersController.cs",
-              "ViewState": "AQIAAFYAAAAAAAAAAAAAAGMAAAA0AAAA",
+              "ViewState": "AQIAAG8AAAAAAAAAAAAkwIIAAAA2AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-26T20:42:41.225Z",
               "EditorCaption": ""
